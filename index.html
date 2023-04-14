@@ -23,18 +23,18 @@
                 <button id="new_game" onclick="newGame()"><i class="ri-add-circle-line"></i>NEW GAME</button>
             </div>
             <div class="d-flex justify-content-around mt-5 fs-1 container_player">
-                <p class="player player1">PLAYER 1</p>
-                <p class="player player2">PLAYER 2</p>
+                <p class="player" id="round_player1">PLAYER 1</p>
+                <p class="player" id="round_player2">PLAYER 2</p>
             </div>
             <div class="d-flex justify-content-around score_total">
-                <p>0</p>
-                <div id="container_Dice" class="container_de"></div>
-                <p>0</p>
+                <p id="total_score_j1">0</p>
+                <div id="container_Dice" class="container_de"><img src="/images/face_1.png" alt=""></div>
+                <p id="total_score_j2">0</p>
             </div>
             <div class="d-flex justify-content-around container_current_score mt-5">
                 <div class="d-flex flex-column justify-content-around text-center mt-5 current_score_j1">
                     <p>CURRENT</p>
-                    <p>0</p>
+                    <p id="current_score_j1">0</p>
                 </div>
                 <div
                     class="d-flex flex-column justify-content-around justify-content-lg-between text-center mt-5 mt-lg-0 container_roll_and_hold">
@@ -52,7 +52,7 @@
                 </div>
                 <div class="d-flex flex-column justify-content-around text-center mt-5 current_score_j2">
                     <p>CURRENT</p>
-                    <p>0</p>
+                    <p id="current_score_j2">0</p>
                 </div>
             </div>
         </section>
