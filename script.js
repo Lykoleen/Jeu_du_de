@@ -29,17 +29,18 @@ const disableHold = document.getElementById('hold');
 disableHold.style.display = "none";
 let returnRandomNumber = 0;
 let roundPlayer = "player1";
-// let changeColorPlayer;
 let scoreInProgress = 0;
 let totalCurrentScore = 0;
 let totalScoreJ1 = 0;
 let totalScoreJ2 = 0;
 
+// Génération d'un nombre aléatoire entre 1 et 6
 function getRandomNumber() {
     returnRandomNumber = Math.floor(Math.random() * 6) + 1;
     return returnRandomNumber;
 };
 
+// Module de reset des scores
 function resetScore() {
     totalScoreJ1 = 0;
     totalScoreJ2 = 0;
@@ -49,6 +50,7 @@ function resetScore() {
     currentPlayer2.textContent = 0;
 }
 
+// Lancement de la partie
 function newGame() {
     infoPlayer.innerText = 'Joueur 1 commence !';
     changeColorPlayer1.style.color = "red";
@@ -57,6 +59,7 @@ function newGame() {
     resetScore();
 };
 
+// Fin de la partie lorsque le joueur atteind les 100 points.
 function endGame() {
     if (totalScoreJ1 >= 100) {
         infoPlayer.innerText = `${roundPlayer} a gagné ! Joueur 2 commence.`;
@@ -70,20 +73,21 @@ function endGame() {
     }
 };
 
-
+// Lancement du dé
 function rollDice() {
     infoPlayer.innerText = '';
-    getRandomNumber();
-    getDice();
-    currentScore();
+    getRandomNumber(); // Génération d'un nombre aléatoire
+    getDice(); // Génération de l'image du dé en fonction du nombre tiré
+    currentScore(); // Affichage et stockage du score obtenu
 }
 
+// Stockage du score temporaire dans le score total.
 function hold() {
     if (roundPlayer === 'player1') {
         currentScoreJ1.textContent = 0;
         totalScoreJ1 += totalCurrentScore;
         currentPlayer1.textContent = totalScoreJ1;
-        endGame();
+        endGame(); // Check des conditions de victoires à chaque envoi de points
         roundPlayer = 'player2'
         totalCurrentScore = 0;
         scoreInProgress = 0;
@@ -102,7 +106,7 @@ function hold() {
     }
 }
 
-//Fonction pour alimenter le current score en fonction du joeur actif
+// Affichage et stockage du score temporaire obtenu
 function currentScore() {
     if (returnRandomNumber !== 1) {
         if (roundPlayer === 'player1') {
