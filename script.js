@@ -22,6 +22,7 @@ const currentPlayer1 = document.getElementById('total_score_j1');
 const currentPlayer2 = document.getElementById('total_score_j2');
 const changeColorPlayer1 = document.getElementById('round_player1')
 const changeColorPlayer2 = document.getElementById('round_player2')
+const infoPlayer = document.getElementById('info_player');
 const disableRoll = document.getElementById('roll_dice');
 disableRoll.style.display = "none";
 const disableHold = document.getElementById('hold');
@@ -49,7 +50,7 @@ function resetScore() {
 }
 
 function newGame() {
-    alert('Joueur 1 commence !');
+    infoPlayer.innerText = 'Joueur 1 commence !';
     changeColorPlayer1.style.color = "red";
     disableRoll.style.display = "block";
     disableHold.style.display = "block";
@@ -58,13 +59,12 @@ function newGame() {
 
 function endGame() {
     if (totalScoreJ1 >= 100) {
-        alert(`${roundPlayer} a gagné !`);
+        infoPlayer.innerText = `${roundPlayer} a gagné ! Joueur 2 commence.`;
         alert('Joueur 2 commence !')
         resetScore();
         roundPlayer = 'player2';
     } else if (totalScoreJ2 >= 100) {
-        alert(`${roundPlayer} a gagné !`);
-        alert('Joueur 1 commence !');
+        infoPlayer.innerText = `${roundPlayer} a gagné ! Joueur 1 commence.`;
         resetScore();
         roundPlayer = 'player1';
     }
@@ -72,6 +72,7 @@ function endGame() {
 
 
 function rollDice() {
+    infoPlayer.innerText = '';
     getRandomNumber();
     getDice();
     currentScore();
@@ -147,7 +148,7 @@ function getDice() {
         divDice.innerHTML = '';
         divDice.appendChild(pictureDice);
         if (roundPlayer == 'player1') {
-            alert('Vous avez fait 1, au tour du joueur 2');
+            infoPlayer.innerText = 'Raté ! Au tour du joueur 2';
             totalCurrentScore = 0;
             scoreInProgress = 0;
             currentScoreJ1.textContent = 0;
@@ -156,7 +157,7 @@ function getDice() {
             changeColorPlayer1.style.color = "black";
             changeColorPlayer2.style.color = "red";
         } else {
-            alert('Vous avez fait 1, au tour du joueur 1');
+            infoPlayer.innerText = 'Raté ! Au tour du joueur 1';
             totalCurrentScore = 0;
             scoreInProgress = 0;
             currentScoreJ1.textContent = 0;

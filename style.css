@@ -77,6 +77,10 @@ button {
     font-weight: bold;
 }
 
+#info_player {
+    height: 25px;
+}
+
 .score_total p {
     font-size: 5rem;
     margin-top: -20px;
@@ -123,6 +127,27 @@ button {
     font-weight: bold;
 }
 
+.container_off_canvas {
+    display: flex;
+    height: 40%;
+    justify-content: center;
+    align-items: flex-end;
+    font-size: 2rem;
+}
+
+.container_off_canvas button {
+    background-color: rgb(240, 80, 63);
+    border: 1px solid rgb(240, 80, 63);
+    filter: drop-shadow(0px 5px 10px grey);
+}
+
+.container_off_canvas p,
+.container_off_canvas h5 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: black;
+}
+
 @media screen and (min-width: 768px) {
     .start_game {
         font-size: 1.4rem;
@@ -149,7 +174,7 @@ button {
 
     .container_roll_and_hold {
         height: 140px;
-        bottom: 80px;
+        bottom: 250px;
         font-size: 1.6rem;
         margin-top: 0;
     }
@@ -164,6 +189,10 @@ button {
         width: 160px;
         height: 140px;
         font-size: 1.6rem;
+    }
+
+    .container_off_canvas {
+        height: 30%;
     }
 }
 
@@ -193,7 +222,7 @@ button {
 
     .container_roll_and_hold {
         height: 140px;
-        bottom: 180px;
+        bottom: 150px;
         font-size: 1.6rem;
         margin-top: 0;
     }
@@ -208,5 +237,13 @@ button {
         width: 160px;
         height: 140px;
         font-size: 1.6rem;
+    }
+
+    .container_off_canvas {
+        height: 20%;
+    }
+
+    .container_off_canvas button {
+        font-size: 1.4rem;
     }
 }

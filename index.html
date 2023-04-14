@@ -19,8 +19,9 @@
     <div class="color2"></div>
     <main class="container-fluid">
         <section class="w-100 h-75">
-            <div class="text-center start_game">
+            <div class="d-flex flex-column text-center start_game">
                 <button id="new_game" onclick="newGame()"><i class="ri-add-circle-line"></i>NEW GAME</button>
+                <div id="info_player"></div>
             </div>
             <div class="d-flex justify-content-around mt-5 fs-1 container_player">
                 <p class="player" id="round_player1">PLAYER 1</p>
@@ -55,11 +56,36 @@
                     <p id="current_score_j2">0</p>
                 </div>
             </div>
+
+            <div class="container_off_canvas">
+                <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">Règles du jeu</button>
+                <div class="offcanvas offcanvas-bottom offcanvas-size-xl" tabindex="-1" id="offcanvasBottom"
+                    aria-labelledby="offcanvasBottomLabel">
+                    <div class="offcanvas-header">
+                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body tall">
+                        <p>Pour lancer une partie, cliquez sur le bouton "New Game"</p>
+                        <p>Le joueur 1 commence. Cliquez sur le bouton "Roll Dice" pour lancer le dé.</p>
+                        <p>Le score obtenu sera stocké dans votre boite "Current"</p>
+                        <p>Vous pouvez lancer le dé autant de fois que vous le voulez.</p>
+                        <p>Appuyez sur le boutton "Hold" pour envoyé votre score "Current" à votre score total et céder
+                            votre tour à l'autre joueur.</p>
+                        <p>Attention ! Si vous tombez sur le nombre 1, vous perdez votre score "Current" et cédez votre
+                            tour.</p>
+                        <p>Le premier joueur qui obtient un score de 100 gagne la partie. Bonne chance !</p>
+                    </div>
+                </div>
+            </div>
         </section>
 
     </main>
     <script src="/script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
