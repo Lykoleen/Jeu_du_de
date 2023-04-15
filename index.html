@@ -32,41 +32,41 @@
                 <div id="container_Dice" class="container_de"><img src="/images/face_1.png" alt=""></div>
                 <p id="total_score_j2">0</p>
             </div>
-            <div class="d-flex justify-content-around container_current_score mt-5">
-                <div class="d-flex flex-column justify-content-around text-center mt-5 current_score_j1">
+            <div class="container_current_score mt-5">
+                <div class="d-flex flex-column justify-content-around text-center current_score_j1">
                     <p>CURRENT</p>
                     <p id="current_score_j1">0</p>
                 </div>
                 <div
-                    class="d-flex flex-column justify-content-around justify-content-lg-between text-center mt-5 mt-lg-0 container_roll_and_hold">
-                    <div class="d-flex align-items-center roll">
+                    class="d-flex flex-column justify-content-around justify-content-lg-between text-center mt-md-0 container_roll_and_hold">
+                    <div class="d-flex align-items-center justify-content-center roll">
 
                         <button id="roll_dice" class="mt-3 mt-lg-0" onclick="rollDice()"><i
                                 class="ri-restart-line"></i>ROLL
                             DICE</button>
                     </div>
-                    <div class="d-flex align-items-center hold">
+                    <div class="d-flex align-items-center justify-content-center hold">
 
                         <button id="hold" class="mt-3 mt-lg-0" onclick="hold()"><i
                                 class="ri-upload-line"></i>HOLD</button>
                     </div>
                 </div>
-                <div class="d-flex flex-column justify-content-around text-center mt-5 current_score_j2">
+                <div class="d-flex flex-column justify-content-around text-center current_score_j2">
                     <p>CURRENT</p>
                     <p id="current_score_j2">0</p>
                 </div>
             </div>
 
             <div class="container_off_canvas">
-                <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
+                <button class="btn btn-primary btn_rules" type="button" data-bs-toggle="offcanvas"
                     data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">Règles du jeu</button>
-                <div class="offcanvas offcanvas-bottom offcanvas-size-xl" tabindex="-1" id="offcanvasBottom"
+                <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom"
                     aria-labelledby="offcanvasBottomLabel">
                     <div class="offcanvas-header">
-                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                        <button type="button" class="btn-close btn_close text-reset" data-bs-dismiss="offcanvas"
                             aria-label="Close"></button>
                     </div>
-                    <div class="offcanvas-body tall">
+                    <div class="offcanvas-body small">
                         <p>Pour lancer une partie, cliquez sur le bouton "New Game"</p>
                         <p>Le joueur 1 commence. Cliquez sur le bouton "Roll Dice" pour lancer le dé.</p>
                         <p>Le score obtenu sera stocké dans votre boite "Current"</p>

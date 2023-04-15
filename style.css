@@ -7,6 +7,12 @@
     font-family: 'Lato', Arial, Helvetica, sans-serif;
 }
 
+html,
+body {
+    overflow: hidden;
+
+}
+
 body {
     position: relative;
 }
@@ -48,7 +54,7 @@ main {
 section {
     min-width: 400px;
     max-width: 1400px;
-    margin: 0;
+    margin: 0 0 100px 0;
 }
 
 .start_game {
@@ -93,8 +99,7 @@ button {
     border-radius: 10px;
 }
 
-.container_de,
-.container_roll_and_hold {
+.container_de {
     position: fixed;
 }
 
@@ -102,10 +107,34 @@ button {
     bottom: 200px;
 }
 
+.container_current_score {
+    display: grid;
+    grid-template-columns: repeat(3, 0.8fr);
+    grid-template-rows: repeat(2, 100px);
+    margin: 0 20px;
+    justify-content: center;
+}
+
+.current_score_j1 {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    justify-self: end;
+}
+
+.current_score_j2 {
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+}
+
+.container_roll_and_hold {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+
 .current_score_j1,
 .current_score_j2 {
-    width: 120px;
-    height: 100px;
+    width: 100px;
+    height: 90px;
     padding: 1px;
     background-color: rgb(240, 80, 63);
     font-weight: bold;
@@ -124,15 +153,25 @@ button {
 
 .container_roll_and_hold {
     height: 100px;
+    bottom: 120px;
     font-weight: bold;
 }
 
 .container_off_canvas {
     display: flex;
-    height: 40%;
     justify-content: center;
-    align-items: flex-end;
-    font-size: 2rem;
+    font-size: 1.4rem;
+}
+
+.btn_rules {
+    position: absolute;
+    bottom: 60px;
+}
+
+.btn_close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
 }
 
 .container_off_canvas button {
@@ -174,7 +213,6 @@ button {
 
     .container_roll_and_hold {
         height: 140px;
-        bottom: 250px;
         font-size: 1.6rem;
         margin-top: 0;
     }
@@ -183,6 +221,19 @@ button {
         margin-top: 0;
     }
 
+    .container_current_score {
+        display: flex;
+        justify-content: space-evenly;
+        margin: auto;
+    }
+
+    .current_score_j1 {
+        margin-left: 70px;
+    }
+
+    .current_score_j2 {
+        margin-right: 70px;
+    }
 
     .current_score_j1,
     .current_score_j2 {
@@ -191,9 +242,6 @@ button {
         font-size: 1.6rem;
     }
 
-    .container_off_canvas {
-        height: 30%;
-    }
 }
 
 @media screen and (min-width: 992px) {
@@ -237,10 +285,6 @@ button {
         width: 160px;
         height: 140px;
         font-size: 1.6rem;
-    }
-
-    .container_off_canvas {
-        height: 20%;
     }
 
     .container_off_canvas button {

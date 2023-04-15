@@ -24,9 +24,9 @@ const changeColorPlayer1 = document.getElementById('round_player1')
 const changeColorPlayer2 = document.getElementById('round_player2')
 const infoPlayer = document.getElementById('info_player');
 const disableRoll = document.getElementById('roll_dice');
-disableRoll.style.display = "none";
+disableRoll.style.visibility = "hidden";
 const disableHold = document.getElementById('hold');
-disableHold.style.display = "none";
+disableHold.style.visibility = "hidden";
 let returnRandomNumber = 0;
 let roundPlayer = "player1";
 let scoreInProgress = 0;
@@ -46,6 +46,8 @@ function resetScore() {
     totalScoreJ2 = 0;
     totalCurrentScore = 0;
     scoreInProgress = 0;
+    currentScoreJ1.textContent = 0;
+    currentScoreJ2.textContent = 0;
     currentPlayer1.textContent = 0;
     currentPlayer2.textContent = 0;
 }
@@ -54,8 +56,9 @@ function resetScore() {
 function newGame() {
     infoPlayer.innerText = 'Joueur 1 commence !';
     changeColorPlayer1.style.color = "red";
-    disableRoll.style.display = "block";
-    disableHold.style.display = "block";
+    changeColorPlayer2.style.color = "black";
+    disableRoll.style.visibility = "visible";
+    disableHold.style.visibility = "visible";
     resetScore();
 };
 
@@ -63,7 +66,6 @@ function newGame() {
 function endGame() {
     if (totalScoreJ1 >= 100) {
         infoPlayer.innerText = `${roundPlayer} a gagné ! Joueur 2 commence.`;
-        alert('Joueur 2 commence !')
         resetScore();
         roundPlayer = 'player2';
     } else if (totalScoreJ2 >= 100) {
